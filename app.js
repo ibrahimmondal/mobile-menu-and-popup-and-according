@@ -25,21 +25,21 @@ menuClose.addEventListener("click", () => {
 const popup = document.getElementById("popup");
 const btn = document.getElementById("btn");
 const body = document.querySelector("body");
-const modal = document.querySelector(".modal");
+const modal = document.getElementById("modal");
 const closeBtn = document.querySelector(".close");
+const modal1 = document.getElementById("popup");
 
-
-
+console.log(modal);
 btn.addEventListener("click", () => {
-    modal.style.display = "flex";
+    modal.classList.remove("hidden");
 });
-// body.addEventListener("click", (e) => {
-//     console.log(e.target);
+body.addEventListener("click", (e) => {
+    console.log(e.target);
     
-//     if (e.target.classList.value === "popup"){
-//         popup.style.display = "modal";
-//     }     
-// });
+    if (e.target === modal){
+        modal.classList.add("hidden");
+    }     
+});
 
 
 closeBtn.addEventListener("click", () => {
